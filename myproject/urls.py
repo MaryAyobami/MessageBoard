@@ -19,6 +19,7 @@ from django.contrib import admin
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('' , include('board.urls'))
+    path('' , include('board.urls')),
+    path('', include('accounts.urls')),
 
 ]

@@ -4,14 +4,14 @@
 
 {% block breadcrumb %}
   <li class="breadcrumb-item"><a href="{% url 'home' %}">Boards</a></li>
-  <li class="breadcrumb-item"><a href="{% url 'board_topics' board.pk %}">{{ board.name }}</a></li>
+ 
   <li class="breadcrumb-item active">New topic</li>
 {% endblock %}
-
 {% block content %}
-<form method="post">
-  {% csrf_token %}
-  {{form.as_p}}
-</form>
+  <form method="post" novalidate>
+    {% csrf_token %}
+    {% include 'includes/form.html' %}
+    <button type="submit" class="btn btn-success">Post</button>
+  </form>
 {% endblock %}
 
